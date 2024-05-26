@@ -1,0 +1,2 @@
+-inventory_scrape.inventory_scrape():
+    -We were getting a console error pertaining to utf-8, chatGPT suggested a try except to add 'latin-1' encoding, and it seems to work.
