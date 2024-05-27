@@ -5,6 +5,7 @@ from helper import date_time_string, delete_oldest_db_file
 from table import create_tables
 from inventory_scrape import inventory_scrape_wrapper
 
+
 if __name__ == "__main__":
     DATE_TIME["date_time"] = "./data/" + date_time_string() + ".db"
     create_tables()
