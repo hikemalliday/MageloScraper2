@@ -2,6 +2,7 @@ from datetime import datetime
 import os
 import glob
 import time
+import shutil
 
 def extract_guild_name(tag):
     a_tags = tag.find_all("a")
@@ -60,18 +61,18 @@ def get_item_from_id(item_id) -> str:
         return item_name
     
 def delete_oldest_db_file():
-    # Get a list of all .db files in the directory
     db_files = glob.glob(os.path.join('./data/', '*.db'))
-
-    if not db_files:
-        print("No .db files found in the directory.")
+    
+    if len(db_files) <= 1:
         return
 
-    # Find the oldest .db file
     oldest_file = min(db_files, key=os.path.getmtime)
-
-    # Print the file that will be deleted
     print(f"Deleting the oldest file: {oldest_file}")
-
-    # Delete the oldest file
     os.remove(oldest_file)
+
+def copy_db_file():
+    source_path = './data/master.db'
+    destination_dir = './data'
+    new_filename = date_time_string() + '.db'
+    destination_path = os.path.join(destination_dir, new_filename)
+    shutil.copy2(source_path, destination_path)
