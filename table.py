@@ -4,7 +4,7 @@ from config import DATE_TIME
 def create_char_inventory_table():
     try:
 # Connect to the SQLite database
-        conn = sqlite3.connect(DATE_TIME["date_time"])
+        conn = sqlite3.connect('./data/master.db')
         cursor = conn.cursor()
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS char_inventory (
@@ -26,7 +26,7 @@ def create_char_inventory_table():
 
 def create_char_names_table():
     try:
-        conn = sqlite3.connect(DATE_TIME["date_time"])
+        conn = sqlite3.connect('./data/master.db')
         cursor = conn.cursor()
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS char_names (
