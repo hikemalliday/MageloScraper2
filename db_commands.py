@@ -41,3 +41,6 @@ def insert_char_names(char_names: list):
     
     finally:
         conn.close()
+
+
+        

@@ -42,6 +42,22 @@ def create_char_names_table():
     finally:
         conn.close()
 
+def delete_tables():
+    try:
+        conn = sqlite3.connect('./data/master.db')
+        cursor = conn.cursor()
+        query = '''DELETE FROM char_names'''
+        cursor.execute(query)
+        query = '''DELETE FROM char_inventory'''
+        cursor.execute(query)
+        conn.commit()
+    except Exception as e:
+        print(e)
+        return str(e)
+    finally:
+        if conn:
+            conn.close()
+
 def create_tables():
     create_char_inventory_table()
     create_char_names_table()

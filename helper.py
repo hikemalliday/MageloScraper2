@@ -1,7 +1,6 @@
 from datetime import datetime
 import os
 import glob
-import time
 import shutil
 
 def extract_guild_name(tag):
@@ -50,7 +49,7 @@ def get_item_from_id(item_id) -> str:
     if item_id == '19964':
         item_name = 'Piece of a medallion (Chardok)'
     if item_id == '20863':
-        item_name = 'Shimmering Peal (EoV)'
+        item_name = 'Shimmering Pearl (EoV)'
     if item_id == '28054':
         item_name = 'Shimmering Pearl (Ragefire)'
     if item_id == '28047':
