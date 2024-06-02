@@ -8,4 +8,4 @@ Design:
 3. Use BeautifulSoup to parse HTML into python
 4. Insert data into SQLite database
 
-AsyncIO increased scrape speed by about 8x.
+AsyncIO increased scrape speed by about 8x (compared to sync).
