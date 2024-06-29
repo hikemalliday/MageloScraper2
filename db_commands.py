@@ -4,7 +4,7 @@ from config import DATE_TIME
 # NOTE: For bulk inserts
 def insert_char_inventories(rows: list):
     try:
-        conn = sqlite3.connect('./data/master.db')
+        conn = sqlite3.connect('./data/inprogress/master.db')
         cursor = conn.cursor()
 
         query = '''INSERT INTO char_inventory (
@@ -26,7 +26,7 @@ def insert_char_inventories(rows: list):
 
 def insert_char_names(char_names: list):
     try:
-        conn = sqlite3.connect('./data/master.db')
+        conn = sqlite3.connect('./data/inprogress/master.db')
         cursor = conn.cursor()
 
         query = '''INSERT INTO char_names (

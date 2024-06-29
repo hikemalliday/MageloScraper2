@@ -70,7 +70,7 @@ def delete_oldest_db_file():
     os.remove(oldest_file)
 
 def copy_db_file():
-    source_path = './data/master.db'
+    source_path = './data/inprogress/master.db'
     destination_dir = './data'
     new_filename = date_time_string() + '.db'
     destination_path = os.path.join(destination_dir, new_filename)
