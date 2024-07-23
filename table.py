@@ -2,7 +2,6 @@ import sqlite3
 from config import DATE_TIME
 
 
-
 def create_char_inventory_table():
     try:
 
