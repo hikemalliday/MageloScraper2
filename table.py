@@ -3,7 +3,7 @@ from config import DATE_TIME
 
 def create_char_inventory_table():
     try:
-# Connect to the SQLite database
+
         conn = sqlite3.connect('./data/inprogress/master.db')
         cursor = conn.cursor()
         cursor.execute('''
