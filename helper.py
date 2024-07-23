@@ -28,7 +28,6 @@ def date_time_string():
     file_string = display_string.replace("/", "-")
     return file_string
 
-
 def get_item_from_id(item_id) -> str:
     item_name = ''
     if item_id == '19956':
