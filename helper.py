@@ -20,7 +20,7 @@ def extract_guild_name(tag):
                         return guild_name
     return ""
 
-def is_dst(dt, year, timezone_offset, dst_offset):
+def is_dst(dt, year):
     # DST starts at 2 AM on the second Sunday in March
     dst_start = datetime(year, 3, 14 - (datetime(year, 3, 1).weekday() + 1), 2) - timedelta(days=7)
     # DST ends at 2 AM on the first Sunday in November
@@ -28,23 +28,13 @@ def is_dst(dt, year, timezone_offset, dst_offset):
     return dst_start <= dt.replace(tzinfo=None) < dst_end
 
 def date_time_string():
-    # Get the current datetime in UTC
     now_utc = datetime.utcnow()
-    
-    # Set Houston standard time offset (UTC-6)
     houston_offset = -6
-    
-    # Check if daylight saving time is in effect
-    if is_dst(now_utc, now_utc.year, houston_offset, -5):
+    if is_dst(now_utc, now_utc.year):
         houston_offset = -5  # Adjust for daylight saving time
 
-    # Apply the offset to get the current time in Houston
     houston_time = now_utc + timedelta(hours=houston_offset)
-    
-    # Create a string with colons for display
-    display_string = houston_time.strftime("%m/%d/%y %H/%M")
-    
-    # Replace colons and slashes with underscores or other valid characters for file name
+    display_string = houston_time.strftime("%m/%d/%y %H:%M")
     file_string = display_string.replace("/", "-").replace(":", "-")
     
     return file_string
